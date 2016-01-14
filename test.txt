@@ -1,0 +1,15 @@
+switch(a){
+case 1: b=b+1; break;
+case 2: c=15; break;
+default: h=0;
+}
+
+
+while(q<10){
+q=q+10;
+}
+
+for(i=1; i<5; i=i+1)
+{
+a=a+1;
+}
