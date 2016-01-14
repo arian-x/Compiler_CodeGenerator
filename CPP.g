@@ -68,6 +68,7 @@ statement : if_st
 	|   variableDeclaration
 	|   iteration 
 	|   switchSt
+	|   callSt
 	;
 
 
@@ -241,9 +242,15 @@ jump : 'break'  ';' {
       				System.out.println("goto " + "L" +           $switchSt::startLabel );
       				} ;
 
-
-
-///////////////////////
+callSt	scope {int n;}: {$callSt::n = 0;} ID'(' params ')' ';' { System.out.println("call " + $ID.text + ", " + $callSt::n);};
+params	:	((expression','{ 
+					$callSt::n += 1;
+					System.out.println("push t" +temp);
+					} 
+					)* expression { 
+					$callSt::n += 1;
+					System.out.println("push t" +temp);
+					} )?;
  	  
 			  
 // LEXER
